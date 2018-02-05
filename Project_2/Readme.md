@@ -1,7 +1,7 @@
 ## Project 2 - Predicting the Success of a Recipe
 
 Project 2 was an opportunity for us to learn web scraping using BeautifulSoup and Selenium and supervised machine learning techniques.
-My project was about predicting the success of a recipe based on the ingredients and nutrition information. As a fan of the good food, I have always been curious on which elements make the dishes better. For this purpose, I chose to analyze the Epicurious.com recipes and their ratings.
+My project was about predicting the success of a recipe based on the ingredients and nutrition information. As a fan of the good food, I have always been curious on which elements make the dishes better. For this purpose, I chose to use a multivariable linear regression model on Epicurious.com recipes.
 
 ### Data Scraping
 
@@ -33,9 +33,16 @@ The nutrition data right skewed, so I transformed them to log, so they had a bet
 
  
 
-For the ingredients, since there were many, I used the Recursive Feature Elimination (RFE) for choosing the 50 most important ingredients that explain the ratings. The RFE Ranks the predictors based on their contribution to the model.
+For the ingredients, since there were many, I used the Recursive Feature Elimination (RFE) for choosing the 50 most important ingredients that explain the ratings. The RFE ranks the predictors based on their contribution to the model.
 
 ### Exploratory Data analysis
+
+In this stage, I realized that a linear regression was not the most appropriate model for analyzing ingredients of a recipe. This method assumes that features are independent, however, the success of a recipe is a result of the combination of flavors, therefore, the interaction between ingredients should be taken into consideration.
+
+In whatever way, the linear regression model performed well and it was possible to get some insights from its results. I used train/test split method from sklearn to divide the data in 70% train and 30% test. Below is the summary of the the OLS model.
+
+
+
 
 
 
