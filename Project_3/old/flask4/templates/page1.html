@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<meta charset="utf-8">
+
+<head>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 25px;
+      font-family: sans-serif;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    .content {
+      max-width: 500px;
+      margin: auto;
+      background: rgb(236, 236, 210);
+    }
+
+    /* Create two equal columns that floats next to each other */
+
+    .column {
+      float: left;
+      padding: 10px;
+    }
+
+    .left {
+      max-width: 50%;
+    }
+
+    .right {
+      min-width: 50%;
+      }
+
+    /* Clear floats after the columns */
+
+    .result {
+      max-width: 500px;
+      margin: auto;
+      background: rgb(255, 255, 255);
+      text-align: center;
+      line-height: 10px;
+      font: 20px sans-serif;
+      font-weight: 900;
+    }
+
+    select {
+      -webkit-appearance: button;
+      -webkit-border-radius: 2px;
+      -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+      -webkit-padding-end: 20px;
+      -webkit-padding-start: 2px;
+      -webkit-user-select: none;
+      background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+      background-position: 97% center;
+      background-repeat: no-repeat;
+      border: 1px solid #AAA;
+      color: #555;
+      font-size: inherit;
+      margin: 10px;
+      overflow: hidden;
+      padding: 5px 10px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 200px;
+    }
+
+    .chart {
+      background: #b0e0f8;
+      margin: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="row">
+    <div class="column left">
+      <h1 align=c enter>Student's Performance Prediction</h1>
+
+      <body background="highschool2.jpg">
+        <div class="content">
+          <p>
+            <label for="sex_M" style="display: inline-block; width: 250px; text-align: right">
+              Gender:
+            </label>
+            <select id="sex_M" onchange="calculateFunction()" class="inputSelect">
+              <option value=1>Male </option>
+              <option value=0>Female </option>
+            </select>
+          </p>
+          <p>
+            <label for="address_U" style="display: inline-block; width: 250px; text-align: right">
+              Home Address Type:
+            </label>
+            <select id="address_U" onchange="calculateFunction()" class="inputSelect">
+              <option value=1>Urban </option>
+              <option value=0>Rural </option>
+            </select>
+          </p>
+          <p>
+            <label for="higher_yes" style="display: inline-block; width: 250px; text-align: right">
+              Plan to take higher degree:
+            </label>
+            <select id="higher_yes" onchange="calculateFunction()" class="inputSelect">
+              <option value=1>Yes </option>
+              <option value=0>No </option>
+            </select>
+          </p>
+          <p>
+            <label for="internet_yes" style="display: inline-block; width: 250px; text-align: right">
+              Internet at Home:
+            </label>
+            <select id="internet_yes" onchange="calculateFunction()" class="inputSelect">
+              <option value=1>Yes </option>
+              <option value=0>No </option>
+            </select>
+          </p>
+          <p>
+            <label for="romantic_yes" style="display: inline-block; width: 250px; text-align: right">
+              Romantic Relationship:
+            </label>
+            <select id="romantic_yes" onchange="calculateFunction()" class="inputSelect">
+              <option value=1>Yes </option>
+              <option value=0>No </option>
+            </select>
+          </p>
+          <p>
+            <label for="failures" style="display: inline-block; width: 250px; text-align: right">
+              Number of Past Class Failures:
+            </label>
+            <select id="failures" onchange="calculateFunction()" class="inputSelect">>
+              <option value=0>0 </option>
+              <option value=1>1 </option>
+              <option value=2>2 </option>
+              <option value=3>3 </option>
+              <option value=4>>3 </option>
+            </select>
+          </p>
+          <p>
+            <label for="famrel" style="display: inline-block; width: 250px; text-align: right">
+              Quality of Family Relationships:
+            </label>
+            <select id="famrel" onchange="calculateFunction()" class="inputSelect">>
+              <option value=1>very bad </option>
+              <option value=2>bad </option>
+              <option value=3>normal </option>
+              <option value=4>good </option>
+              <option value=5>excellent </option>
+            </select>
+          </p>
+
+
+        </div>
+        <div class="result">
+          <p>
+            <label for="result" style="display: inline-block; width: 200px; text-align: center;">
+              <div class="result_message"></div>
+            </label>
+          </p>
+        </div>
+    </div>
+    <div class="column right">
+      <div class='tableauPlaceholder' id='viz1519103316911' style='position: relative'>
+        <noscript>
+          <a href='#'>
+            <img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;St&#47;Students_Performance&#47;Dashboard1&#47;1_rss.png'
+              style='border: none' />
+          </a>
+        </noscript>
+        <object class='tableauViz' style='display:none;'>
+          <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+          <param name='embed_code_version' value='3' />
+          <param name='site_root' value='' />
+          <param name='name' value='Students_Performance&#47;Dashboard1' />
+          <param name='tabs' value='no' />
+          <param name='toolbar' value='yes' />
+          <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;St&#47;Students_Performance&#47;Dashboard1&#47;1.png'
+          />
+          <param name='animate_transition' value='yes' />
+          <param name='display_static_image' value='yes' />
+          <param name='display_spinner' value='yes' />
+          <param name='display_overlay' value='yes' />
+          <param name='display_count' value='yes' />
+          <param name='filter' value='publish=yes' />
+        </object>
+      </div>
+      <script type='text/javascript'>
+        var divElement = document.getElementById('viz1519103316911');
+        var vizElement = divElement.getElementsByTagName('object')[0];
+        vizElement.style.minWidth = '420px';
+        vizElement.style.maxWidth = '650px';
+        vizElement.style.width = '100%';
+        vizElement.style.minHeight = '587px';
+        vizElement.style.maxHeight = '1000px';
+        vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+        var scriptElement = document.createElement('script');
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+      </script>
+    </div>
+  </div>
+
+  <script>
+    function calculateFunction() {
+      $.ajax({
+        url: "{{ url_for('calculate')}}",
+        dataType: 'json',
+        contentType: 'application/json; charset=utf-8',
+        data: JSON.stringify(extractData()),
+        type: 'POST',
+        success: function (response) {
+          showResult(response['result']);
+          console.log(response);
+        },
+        error: function (error) {
+          console.log(error);
+        }
+      })
+    }
+  </script>
+
+  <script>
+    function extractData() {
+      output_dict = {};
+      //get all form inputs and save in a dictionary
+      var numbers = $(".inputSelect");
+      console.log(numbers)
+      numbers.each(function () {
+        output_dict[$(this).attr('id')] = $(this).find(":selected").val();
+      })
+
+      var bars = $(".inputBar");
+      console.log(bars)
+      bars.each(function () {
+        output_dict[$(this).attr('id')] = $(this).val();
+      })
+
+      console.log(output_dict)
+      return output_dict;
+    };
+
+    function showResult(result) {
+      var resultMessageDiv = d3.selectAll(".result_message")
+        .text(result);
+      console.log(result);
+    };
+  </script>
+
+  </body>

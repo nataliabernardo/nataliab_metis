@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Muffin or Cupcake</title>
+  <style>
+  body{
+    font-family: sans-serif;
+  }
+  .button {
+    background-color: LightPink;
+    border: none;
+    color: Black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  .animal-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 10px 10px 0px #eee;
+    width: 300px;
+    margin: auto;
+  }
+  </style>
+
+</head>
+
+<body align="center">
+
+  <h3>Enter in a baked goods recipe and we'll tell you if it's a muffin or cupcake.</h3>
+
+  <form action="/predict_recipe/" method="post">
+
+    <div class="animal-card" align="center">
+
+      Flour (cups):
+      <br>
+        <input type="text" name="flour_cups">
+      <br>
+      
+      Milk (cups):
+      <br>
+        <input type="text" name="milk_cups">
+      <br>
+
+      Sugar (cups):
+      <br>
+        <input type="text" name="sugar_cups">
+      <br>
+      
+      Butter (cups):
+      <br>
+      	<input type="text" name="butter_cups">
+      <br>
+
+      Eggs (number):
+      <br>
+        <input type="text" name="eggs_num">
+      <br>
+
+      Baking Powder (tsp):
+      <br>
+        <input type="text" name="bp_tsp">
+      <br>
+      
+      Vanilla (tsp):
+      <br>
+        <input type="text" name="vanilla_tsp">
+      <br>
+      
+      Salt (tsp):
+      <br>
+        <input type="text" name="salt_tsp">
+      <br>
+
+    </div>
+
+  <br>
+
+  <button type="submit" class="button">
+    What is it?
+  </button>
+  </form>
+
+  <br>
+
+  {% if message %}
+  <p class="button">{{message}}</p>
+  {% endif %}
+
+</body>
+</html>
