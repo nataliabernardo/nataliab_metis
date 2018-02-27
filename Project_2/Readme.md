@@ -54,7 +54,7 @@ Regarding the ingredients, if you look closer to the ones that most impact the r
 
 <p align="center"> <img src="https://github.com/nataliabernardo/nataliab_metis/blob/master/Project_2/images/Screen%20Shot%202018-02-26%20at%208.46.43%20PM.png?raw=true" width="80%"></p>
 
-These ingredients are usually the ones that people love or hate, for example, pinapple. Most people I know dislike pinapple in their meal, in fact it had an negative coefficient.
+These ingredients are usually the ones that people love or hate, for example, pinapple. Most people I know dislike pinapple in their meal, in fact it had an negative correlation with the success score.
 
 ### Final Thoughts
 
