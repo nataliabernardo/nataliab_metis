@@ -1,0 +1,4 @@
+[0228/021732.763:ERROR:process_reader_win.cc(151)] SuspendThread: Access is denied. (0x5)
+[0228/021732.764:ERROR:exception_snapshot_win.cc(88)] thread ID 11344 not found in process
+[0228/021732.765:WARNING:crash_report_exception_handler.cc(62)] ProcessSnapshotWin::Initialize failed
+[0228/021732.765:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: An attempt was made to access an exiting process. (0xc000010a)
