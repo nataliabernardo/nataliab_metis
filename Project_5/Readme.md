@@ -12,8 +12,7 @@ Pictures of intersections using Google Street View API. Lat/long extracted from 
 
 #### Method for identifying curb ramps on images
 
-There are different ways of identifying a  specific class on images
-Image Classification x Object Detection x Object Segmentation.
+There are different ways of identifying a  specific class on images, as illustrated in the picture below.
 
 <p align="center"> <img src="post_images/image_detection.jpg" width="90%"></p>
 
