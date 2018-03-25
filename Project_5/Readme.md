@@ -15,6 +15,7 @@ Pictures of intersections using Google Street View API. Lat/long extracted from 
 Image Classification x Object Detection x Object Segmentation.
 
 add comparison image
+<p align="center"> <img src="nataliab_metis/Project_5/post_images//image_detection.png" width="100%"></p>
 
 Chose Object Detection
 * Tensorflow Object Detection API facilitates this task
