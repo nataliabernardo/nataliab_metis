@@ -14,17 +14,14 @@ Pictures of intersections using Google Street View API. Lat/long extracted from 
 
 Image Classification x Object Detection x Object Segmentation.
 
-add comparison image
 <p align="center"> <img src="post_images/image_detection.jpg" width="90%"></p>
 
-Chose Object Detection
-* Tensorflow Object Detection API facilitates this task
-* Requires drawing bounding boxes for labeling objects in you own
+For this project I chose the object detection method. First, because Tensorflow Object Detection API facilitates the task. Second, since I'm training images with custom classes it requires drawing simple bounding boxes around the ramps, instead of polygons as in segmentation.
 
 #### Tensorflow Object Detection API:
 
 Released in 2017.
-Does the fine-tuning of a pre-trained object detection model using own data set with new classes, method called "transfer learning". It modifies the dense layers and the final softmax layer to output 2 categories (yellow_curb_ramp, gray_curb_ramp) instead of a 1000.
+Does the fine-tuning of a pre-trained object detection model with own data set with new classes, method called "transfer learning". It modifies the dense layers and the final softmax layer to output 2 categories (yellow_curb_ramp, gray_curb_ramp) instead of a 1000.
 
 #### Architecture
 
