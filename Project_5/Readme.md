@@ -1,7 +1,7 @@
 
 ### Identifying curb ramps on sidewalks through Google Street View images
 
-<Write about why detect curb ramps and assumptions>
+Write about why detect curb ramps and assumptions
   
 ### 1. The Data
 
@@ -14,7 +14,7 @@ Pictures of intersections using Google Street View API. Lat/long extracted from 
 
 Image Classification x Object Detection x Object Segmentation.
 
-<add comparison image>
+add comparison image
 
 Chose Object Detection
 * Tensorflow Object Detection API facilitates this task
@@ -29,7 +29,7 @@ Does the fine-tuning of a pre-trained object detection model using own data set 
 
 There's a speed/accuracy trade-off when choosing the object detection model, as despicted in the image below:
 
-<image>
+image
   
 The sweet spot is the “elbow” part of the mAP (Mean Average Precision) vs GPU time graph. Based on that, I chose to use [Faster R-CNN](https://arxiv.org/pdf/1506.01497.pdf) object detection model, with [RestNet](https://arxiv.org/abs/1512.03385) feature extractor, trained on [COCO](http://cocodataset.org) dataset.
 
