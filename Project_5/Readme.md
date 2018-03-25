@@ -15,7 +15,7 @@ Pictures of intersections using Google Street View API. Lat/long extracted from 
 Image Classification x Object Detection x Object Segmentation.
 
 add comparison image
-<p align="center"> <img src="nataliab_metis/Project_5/post_images//image_detection.jpg" width="60%"></p>
+<p align="center"> <img src="post_images/image_detection.jpg" width="90%"></p>
 
 Chose Object Detection
 * Tensorflow Object Detection API facilitates this task
@@ -30,7 +30,7 @@ Does the fine-tuning of a pre-trained object detection model using own data set 
 
 There's a speed/accuracy trade-off when choosing the object detection model, as despicted in the image below:
 
-image
+<p align="center"> <img src="post_images/models_trade-off.jpg" width="70%"></p>
   
 The sweet spot is the “elbow” part of the mAP (Mean Average Precision) vs GPU time graph. Based on that, I chose to use [Faster R-CNN](https://arxiv.org/pdf/1506.01497.pdf) object detection model, with [RestNet](https://arxiv.org/abs/1512.03385) feature extractor, trained on [COCO](http://cocodataset.org) dataset.
 
