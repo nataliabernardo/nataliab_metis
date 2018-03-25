@@ -25,7 +25,11 @@ Chose Object Detection
 Released in 2017.
 Does the fine-tuning of a pre-trained object detection model using own data set with new classes. It modifies the dense layers and the final softmax layer to output 2 categories (yellow_curb_ramp, gray_curb_ramp) instead of a 1000.
 
-#### Arqhitecture
+#### Architecture
 
-I chose to use [Faster R-CNN](https://arxiv.org/pdf/1506.01497.pdf) object detection model, along with [RestNet]() feature extractor, trained on [COCO](http://cocodataset.org) dataset
+There's a speed/accuracy trade-off when choosing the object detection model, as despicted in the image below:
+
+<image>
+  
+The sweet spot is the “elbow” part of the mAP (Mean Average Precision) vs GPU time graph. Based on that, I chose to use [Faster R-CNN](https://arxiv.org/pdf/1506.01497.pdf) object detection model, with [RestNet](https://arxiv.org/abs/1512.03385) feature extractor, trained on [COCO](http://cocodataset.org) dataset.
 
