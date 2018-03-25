@@ -1,0 +1,23 @@
+<annotation>
+    <folder>ramp_photos</folder>
+    <filename>chan1.jpg</filename>
+    <size>
+        <width>310</width>
+        <height>312</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>ramp</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <occluded>0</occluded>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>28</xmin>
+            <ymin>186</ymin>
+            <xmax>223</xmax>
+            <ymax>285</ymax>
+        </bndbox>
+    </object>
+</annotation>

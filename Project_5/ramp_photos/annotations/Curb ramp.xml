@@ -1,0 +1,23 @@
+<annotation>
+    <folder>ramp_photos</folder>
+    <filename>Curb ramp.jpg</filename>
+    <size>
+        <width>1532</width>
+        <height>739</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>ramp</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <occluded>0</occluded>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>342</xmin>
+            <ymin>328</ymin>
+            <xmax>1019</xmax>
+            <ymax>610</ymax>
+        </bndbox>
+    </object>
+</annotation>

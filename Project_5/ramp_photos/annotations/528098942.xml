@@ -1,0 +1,23 @@
+<annotation>
+    <folder>ramp_photos</folder>
+    <filename>528098942.jpg</filename>
+    <size>
+        <width>1200</width>
+        <height>675</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>ramp</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <occluded>0</occluded>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>182</xmin>
+            <ymin>127</ymin>
+            <xmax>939</xmax>
+            <ymax>598</ymax>
+        </bndbox>
+    </object>
+</annotation>

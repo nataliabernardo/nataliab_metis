@@ -1,0 +1,23 @@
+<annotation>
+    <folder>ramp_photos</folder>
+    <filename>DSCF3074.jpg</filename>
+    <size>
+        <width>2016</width>
+        <height>1512</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>ramp</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <occluded>0</occluded>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>97</xmin>
+            <ymin>810</ymin>
+            <xmax>1763</xmax>
+            <ymax>1487</ymax>
+        </bndbox>
+    </object>
+</annotation>
