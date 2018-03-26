@@ -42,12 +42,14 @@ First, I filtered the streets' intersections images that were classified by [acc
 
 #### Install the API
 
+```
 git clone https://github.com/tensorflow/models.git
 cd models/research/
 protoc object_detection/protos/*.proto --python_out=.
 export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
 cd ..
 cd ..
+```
 
 #### Convert labels to the TFRecord format
 
@@ -59,23 +61,29 @@ Tensorflow Object Detection API uses the TFRecord file format, so at the end we 
 
 * Download the Faster-RCNN_RestNet model
 
+```
 wget http://download.tensorflow.org/models/object_detection/faster_rcnn_resnet50_coco_2018_01_28.tar.gz
 tar xvzf faster_rcnn_resnet50_coco_2018_01_28.tar.gz
+```
 
-* On a new terminal, paste:
+* On a new terminal:
 
+ ```
  python3 models/research/object_detection/train.py \
  --logtostderr \
  --train_dir=${PATH_TO_TRAIN_DIR} \
  --pipeline_config_path=${PATH_TO_YOUR_PIPELINE_CONFIG}
+ ```
 
-#### Export the trained model
+* Export the trained model
 
+```
 python3 models/research/object_detection/export_inference_graph.py \
     --input_type image_tensor \
     --pipeline_config_path ${PIPELINE_CONFIG_PATH} \
     --trained_checkpoint_prefix ${TRAIN_PATH} \
     --output_directory object_detection_graph
+```
 
 ### 4. Results!
 
