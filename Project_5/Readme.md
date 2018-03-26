@@ -39,7 +39,7 @@ The sweet spot is the “elbow” part of the mAP (Mean Average Precision) vs GP
 
 First, I filtered the streets' intersections images that were classified by [AccessMap](https://accessmap.io) as having curb ramps. Afterwards, I draw retangles around yellow (with tactile warning) and grey curb ramps (without tactile warning) in 1000 images using [VOTT](https://github.com/Microsoft/VoTT/releases). I found this labelling tool more user-friendly than Rectlabel.
 
-#### Convert labels to the TFRecord format
+#### Convert data to TFRecord format
 
 Tensorflow Object Detection API uses the TFRecord file format, so at the end we need to convert our dataset to this file format. I generated a tfrecord using a code adapted from this [raccoon detector](https://github.com/datitran/raccoon_dataset/blob/master/generate_tfrecord.py) .
 
