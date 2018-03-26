@@ -5,7 +5,7 @@ Write about why detect curb ramps and assumptions
   
 ### 1. Extracting images from Google Street View
 
-Pictures of intersections using Google Street View API. Lat/long extracted from [accessmap.io](https://accessmap.io)
+The images used for this project were the pictures of intersections, extracted by Google Street View API. Fortunately, a University of Washington project named [AccessMap](https://accessmap.io), designed to improve the sidewalk data for pedestrians, provided the coordinates of all intersections in Seattle.
 
 ### 2. Choosing the Model
 
@@ -92,6 +92,7 @@ I tested a few pictures on the model to check if it identifies the curb ramps.
 * Learn how to get the precision and recall
 * Learn how to improve image augmentation
 * Train more images
+* Extract results
 
 
 
