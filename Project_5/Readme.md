@@ -85,7 +85,14 @@ python3 models/research/object_detection/export_inference_graph.py \
 
 ### 5. Results!
 
-I tested a few pictures on the model to check if it identifies the curb ramps.
+I tested a few pictures on the model to check if it identifies the curb ramps. I was very happy with the results so far. The results using Faster R-CNN RestNet  were significantly more accurate than in my previous attempt of using SSD MobileNet. You can check some predictions below.
+
+<p align="center"> <img src="post_images/correctly_detected.jpg" width="100%"></p>
+
+
+However, it still needs to be improved. As you can see, some ramps are not being detected, or in some cases, the models detects random things as ramps.
+
+<p align="center"> <img src="post_images/wrongly_detected.jpg" width="100%"></p>
 
 ### 6. Next Steps
 
