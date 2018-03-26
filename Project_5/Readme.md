@@ -30,16 +30,17 @@ The Object Detection API has been trained on Microsoft COCO dataset (a dataset o
 There's a speed/accuracy trade-off when choosing the object detection model, as despicted in the image below:
 
 <p align="center"> <img src="post_images/models_trade-off.jpg" width="70%"></p>
+<p align="center"><font size="1">Source: <a href="https://arxiv.org/pdf/1611.10012.pdf">Speed/accuracy trade-offs for modern convolutional object detectors</a></font></p>
   
 The sweet spot is the “elbow” part of the mAP (Mean Average Precision) vs GPU time graph. Based on that, I chose to use [Faster R-CNN](https://arxiv.org/pdf/1506.01497.pdf) object detection model, with [RestNet](https://arxiv.org/abs/1512.03385) feature extractor, trained on [COCO](http://cocodataset.org) dataset.
 
 ### 3. Training the Model
 
-#### Training dataset and labelling
+#### Label the images
 
-First, I filtered the streets' intersections images that were classified by [accessmap](accessmap.io) as having curb ramps. Afterwards, I hand-labeled manually 1000 curb ramps images with 
+First, I filtered the streets' intersections images that were classified by [accessmap](https://accessmap.io) as having curb ramps. Afterwards, I hand-labeled manually 1000 curb ramps images with 
 
-#### Installing the API
+#### Install the API
 
 git clone https://github.com/tensorflow/models.git
 cd models/research/
@@ -58,8 +59,8 @@ Tensorflow Object Detection API uses the TFRecord file format, so at the end we 
 
 * Download the Faster-RCNN_RestNet model
 
-wget http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_coco_11_06_2017.tar.gz
-tar xvzf ssd_mobilenet_v1_coco_11_06_2017.tar.gz
+wget http://download.tensorflow.org/models/object_detection/faster_rcnn_resnet50_coco_2018_01_28.tar.gz
+tar xvzf faster_rcnn_resnet50_coco_2018_01_28.tar.gz
 
 * On a new terminal, paste:
 
