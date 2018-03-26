@@ -14,7 +14,7 @@ The images used for this project were the pictures of intersections, extracted b
 There are different ways of identifying a  specific class on images, as illustrated in the picture below.
 
 <p align="center"> <img src="post_images/image_detection.jpg" width="90%"></p>
-<p align="center"><font size="1">Source: Facebook Research</font></p>
+<p align="center"><font size="1">Source: <a href="https://research.fb.com/learning-to-segment/">Facebook Research</a></font></p> 
 
 For this project I chose the object detection method. First, because since I'm training images with custom classes, it requires drawing simple bounding boxes around the ramps, instead of polygons as in segmentation. And I believe it would be a tricky task to use the classification method on a new category. 
 
@@ -37,7 +37,7 @@ The sweet spot is the “elbow” part of the mAP (Mean Average Precision) vs GP
 
 #### Label the images
 
-First, I filtered the streets' intersections images that were classified by [accessmap](https://accessmap.io) as having curb ramps. Afterwards, I draw retangles around yellow (with tactile warning) and grey curb ramps (without tactile warning) in 1000 images using [VOTT](https://github.com/Microsoft/VoTT/releases). I found this labelling tool more user-friendly than Rectlabel.
+First, I filtered the streets' intersections images that were classified by [AccessMap](https://accessmap.io) as having curb ramps. Afterwards, I draw retangles around yellow (with tactile warning) and grey curb ramps (without tactile warning) in 1000 images using [VOTT](https://github.com/Microsoft/VoTT/releases). I found this labelling tool more user-friendly than Rectlabel.
 
 #### Convert labels to the TFRecord format
 
