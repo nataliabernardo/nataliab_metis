@@ -56,18 +56,15 @@ Tensorflow Object Detection API uses the TFRecord file format, so at the end we 
 
 
 #### Train the model
-* GPU vs. CPU Performance
 
-To train the model, I used tensorflow-gpu 1.5 on a Win10 machine with a NVIDIA GeForce GTX 970 4GB. I followed the steps described on https://www.tensorflow.org/programmers_guide/using_gpu . By using a GPU, the training was 10+ times faster than using tensorflow without GPU support on a MacBook.
-
-* Download the Faster-RCNN_RestNet model
+Once I decided the architecture, the first step for training, was to download the Faster-RCNN_RestNet model.
 
 ```
 wget http://download.tensorflow.org/models/object_detection/faster_rcnn_resnet50_coco_2018_01_28.tar.gz
 tar xvzf faster_rcnn_resnet50_coco_2018_01_28.tar.gz
 ```
 
-* On a new terminal:
+Finally, I could train the model, using the command below on a new terminal:
 
  ```
  python3 models/research/object_detection/train.py \
@@ -76,7 +73,9 @@ tar xvzf faster_rcnn_resnet50_coco_2018_01_28.tar.gz
  --pipeline_config_path=${PATH_TO_YOUR_PIPELINE_CONFIG}
  ```
 
-* Export the trained model
+I used tensorflow-gpu 1.5 on a Win10 machine with a NVIDIA GeForce GTX 970 4GB, following the steps described on the [Tensorflow website](https://www.tensorflow.org/install/install_windows). By using a GPU, the training was 10+ times faster than using tensorflow without GPU support on a MacBook.
+
+Once training was complete it was time to test the model. The following command export the inference graph based on the best checkpoint:
 
 ```
 python3 models/research/object_detection/export_inference_graph.py \
