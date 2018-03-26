@@ -37,7 +37,7 @@ The sweet spot is the “elbow” part of the mAP (Mean Average Precision) vs GP
 
 #### Label the images
 
-First, I filtered the streets' intersections images that were classified by [accessmap](https://accessmap.io) as having curb ramps. Afterwards, I hand-labeled manually 1000 curb ramps images with 
+First, I filtered the streets' intersections images that were classified by [accessmap](https://accessmap.io) as having curb ramps. Afterwards, I draw retangles around yellow (with tactile warning) and grey curb ramps (without tactile warning) in 1000 images using a tool called [VOTT](https://github.com/Microsoft/VoTT/releases).
 
 #### Install the API
 
