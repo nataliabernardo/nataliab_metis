@@ -33,13 +33,26 @@ There's a speed/accuracy trade-off when choosing the object detection model, as 
   
 The sweet spot is the “elbow” part of the mAP (Mean Average Precision) vs GPU time graph. Based on that, I chose to use [Faster R-CNN](https://arxiv.org/pdf/1506.01497.pdf) object detection model, with [RestNet](https://arxiv.org/abs/1512.03385) feature extractor, trained on [COCO](http://cocodataset.org) dataset.
 
-### 3. Training the Model
+### 3. Preparing the Data
 
 #### Label the images
 
 First, I filtered the streets' intersections images that were classified by [accessmap](https://accessmap.io) as having curb ramps. Afterwards, I draw retangles around yellow (with tactile warning) and grey curb ramps (without tactile warning) in 1000 images using [VOTT](https://github.com/Microsoft/VoTT/releases). I found this labelling tool more user-friendly than Rectlabel.
 
-#### Install the API
+#### Convert labels to the TFRecord format
+
+Tensorflow Object Detection API uses the TFRecord file format, so at the end we need to convert our dataset to this file format. I generated a tfrecord using a code adapted from this [raccoon detector](https://github.com/datitran/raccoon_dataset/blob/master/generate_tfrecord.py) .
+
+
+### 4. Training the Model
+
+Once I decided the architecture, the first step for training, was to download the Faster-RCNN_RestNet model.
+
+```
+wget http://download.tensorflow.org/models/object_detection/faster_rcnn_resnet50_coco_2018_01_28.tar.gz
+tar xvzf faster_rcnn_resnet50_coco_2018_01_28.tar.gz
+```
+For installing the Object Detection API, you need to run the following code on the root directory:
 
 ```
 git clone https://github.com/tensorflow/models.git
@@ -49,22 +62,7 @@ export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
 cd ..
 cd ..
 ```
-
-#### Convert labels to the TFRecord format
-
-Tensorflow Object Detection API uses the TFRecord file format, so at the end we need to convert our dataset to this file format. I generated a tfrecord using a code adapted from this [raccoon detector](https://github.com/datitran/raccoon_dataset/blob/master/generate_tfrecord.py) .
-
-
-#### Train the model
-
-Once I decided the architecture, the first step for training, was to download the Faster-RCNN_RestNet model.
-
-```
-wget http://download.tensorflow.org/models/object_detection/faster_rcnn_resnet50_coco_2018_01_28.tar.gz
-tar xvzf faster_rcnn_resnet50_coco_2018_01_28.tar.gz
-```
-
-Finally, I could train the model, using the command below on a new terminal:
+Finally, I could train the model, using the command:
 
  ```
  python3 models/research/object_detection/train.py \
