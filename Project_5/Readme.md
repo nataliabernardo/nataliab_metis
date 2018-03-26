@@ -35,11 +35,9 @@ The sweet spot is the “elbow” part of the mAP (Mean Average Precision) vs GP
 
 ### 3. Training the Model
 
-#### GPU
-
 #### Training dataset and labelling
 
-
+First, I filtered the streets' intersections images that were classified by [accessmap](accessmap.io) as having curb ramps. Afterwards, I hand-labeled manually 1000 curb ramps images with 
 
 #### Installing the API
 
@@ -52,9 +50,19 @@ cd ..
 
 #### Convert labels to the TFRecord format
 
+Tensorflow Object Detection API uses the TFRecord file format, so at the end we need to convert our dataset to this file format. I generated a tfrecord using a code adapted from this [raccoon detector](https://github.com/datitran/raccoon_dataset/blob/master/generate_tfrecord.py) .
 
 
 #### Train the model
+* GPU
+
+* Download the Faster-RCNN_RestNet model
+
+wget http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_coco_11_06_2017.tar.gz
+tar xvzf ssd_mobilenet_v1_coco_11_06_2017.tar.gz
+
+* On a new terminal, paste:
+
  python3 models/research/object_detection/train.py \
  --logtostderr \
  --train_dir=${PATH_TO_TRAIN_DIR} \
@@ -69,6 +77,8 @@ python3 models/research/object_detection/export_inference_graph.py \
     --output_directory object_detection_graph
 
 ### 4. Results!
+
+I tested a few pictures on the model to check if it identifies the curb ramps.
 
 ### 5. Next Steps
 
