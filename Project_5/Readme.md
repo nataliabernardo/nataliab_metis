@@ -15,6 +15,7 @@ Pictures of intersections using Google Street View API. Lat/long extracted from 
 There are different ways of identifying a  specific class on images, as illustrated in the picture below.
 
 <p align="center"> <img src="post_images/image_detection.jpg" width="90%"></p>
+<p align="center"><font size="1">Source: Facebook Research</font></p>
 
 For this project I chose the object detection method. First, because since I'm training images with custom classes, it requires drawing simple bounding boxes around the ramps, instead of polygons as in segmentation. And I believe it would be a tricky task to use the classification method on a new category. 
 
@@ -22,7 +23,7 @@ Second, as a path to my quest, the Tensorflow Object Detection API - realeased b
 
 #### Tensorflow Object Detection API:
 
-The Object Detection API has been trained on Microsoft COCO dataset (a dataset of about 300,000 images of 90 commonly found objects) with different trainable detection models. The API does the fine-tuning of a pre-trained object detection model with own data set with new classes, method called "transfer learning", modifing the dense layers and the final softmax layer to output 2 categories (yellow_curb_ramp, gray_curb_ramp) instead of 90. It also includes image augmentation, such as flipping and saturation.
+The Object Detection API has been trained on Microsoft COCO dataset (a dataset of about 300,000 images of 90 commonly found objects) with different trainable detection models. The API does the fine-tuning of a pre-trained object detection model with own data set with new classes, removing the last 90 neuron classification layer of the network and replacing it with a new layer that outputs 2 categories (yellow_curb_ramp, gray_curb_ramp). It also includes image augmentation, such as flipping and saturation.
 
 #### Architecture
 
@@ -38,11 +39,34 @@ The sweet spot is the “elbow” part of the mAP (Mean Average Precision) vs GP
 
 #### Training dataset and labelling
 
+
+
 #### Installing the API
+
+git clone https://github.com/tensorflow/models.git
+cd models/research/
+protoc object_detection/protos/*.proto --python_out=.
+export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
+cd ..
+cd ..
 
 #### Convert labels to the TFRecord format
 
-#### Implement new model with TensorFlow
+
+
+#### Train the model
+ python3 models/research/object_detection/train.py \
+ --logtostderr \
+ --train_dir=${PATH_TO_TRAIN_DIR} \
+ --pipeline_config_path=${PATH_TO_YOUR_PIPELINE_CONFIG}
+
+#### Export the trained model
+
+python3 models/research/object_detection/export_inference_graph.py \
+    --input_type image_tensor \
+    --pipeline_config_path ${PIPELINE_CONFIG_PATH} \
+    --trained_checkpoint_prefix ${TRAIN_PATH} \
+    --output_directory object_detection_graph
 
 ### 4. Results!
 
