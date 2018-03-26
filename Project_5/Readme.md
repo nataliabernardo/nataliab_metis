@@ -28,7 +28,7 @@ The Object Detection API has been trained on Microsoft COCO dataset (a dataset o
 
 There's a speed/accuracy trade-off when choosing the object detection model, as despicted in the image below:
 
-<p align="center"> <img src="post_images/models_trade-off.jpg" width="70%"></p>
+<p align="center"> <img src="post_images/models_trade-off.jpg" width="65%"></p>
 <p align="center"><font size="1">Source: <a href="https://arxiv.org/pdf/1611.10012.pdf">Speed/accuracy trade-offs for modern convolutional object detectors</a></font></p>
   
 The sweet spot is the “elbow” part of the mAP (Mean Average Precision) vs GPU time graph. Based on that, I chose to use [Faster R-CNN](https://arxiv.org/pdf/1506.01497.pdf) object detection model, with [RestNet](https://arxiv.org/abs/1512.03385) feature extractor, trained on [COCO](http://cocodataset.org) dataset.
