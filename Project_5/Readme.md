@@ -37,7 +37,7 @@ The sweet spot is the “elbow” part of the mAP (Mean Average Precision) vs GP
 
 #### Label the images
 
-First, I filtered the streets' intersections images that were classified by [accessmap](https://accessmap.io) as having curb ramps. Afterwards, I draw retangles around yellow (with tactile warning) and grey curb ramps (without tactile warning) in 1000 images using a tool called [VOTT](https://github.com/Microsoft/VoTT/releases).
+First, I filtered the streets' intersections images that were classified by [accessmap](https://accessmap.io) as having curb ramps. Afterwards, I draw retangles around yellow (with tactile warning) and grey curb ramps (without tactile warning) in 1000 images using [VOTT](https://github.com/Microsoft/VoTT/releases). I found this labelling tool more user-friendly than Rectlabel.
 
 #### Install the API
 
@@ -56,7 +56,9 @@ Tensorflow Object Detection API uses the TFRecord file format, so at the end we 
 
 
 #### Train the model
-* GPU
+* GPU vs. CPU Performance
+
+To train the model, I used tensorflow-gpu 1.5 on a Win10 machine with a NVIDIA GeForce GTX 970 4GB. I followed the steps described on https://www.tensorflow.org/programmers_guide/using_gpu . By using a GPU, the training was 10+ times faster than using tensorflow without GPU support on a MacBook.
 
 * Download the Faster-RCNN_RestNet model
 
