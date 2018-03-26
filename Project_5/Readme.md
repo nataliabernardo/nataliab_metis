@@ -73,7 +73,7 @@ Finally, I could train the model, using the command below on a new terminal:
  --pipeline_config_path=${PATH_TO_YOUR_PIPELINE_CONFIG}
  ```
 
-I used tensorflow-gpu 1.5 on a Win10 machine with a NVIDIA GeForce GTX 970 4GB, following the steps described on the [Tensorflow website](https://www.tensorflow.org/install/install_windows). By using a GPU, the training was 10+ times faster than using tensorflow without GPU support on a MacBook.
+I used tensorflow-gpu 1.5 on a Win10 machine with a NVIDIA GeForce GTX 970 4GB, following the installation steps described on the [Tensorflow website](https://www.tensorflow.org/install/install_windows). By using a GPU, the training was 10+ times faster than using tensorflow without GPU support on a MacBook.
 
 Once training was complete it was time to test the model. The following command export the inference graph based on the best checkpoint:
 
