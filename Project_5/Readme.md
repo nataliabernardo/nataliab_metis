@@ -1,11 +1,10 @@
 
-### Identifying curb ramps on sidewalks through Google Street View images
+### Identifying Curb Ramps on Sidewalks through Google Street View images
 
 Write about why detect curb ramps and assumptions
   
-### 1. The Data
+### 1. Extracting images from Google Street View
 
-#### Images extraction
 Pictures of intersections using Google Street View API. Lat/long extracted from [accessmap.io](https://accessmap.io)
 
 ### 2. Choosing the Model
