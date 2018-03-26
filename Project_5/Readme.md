@@ -83,11 +83,11 @@ python3 models/research/object_detection/export_inference_graph.py \
     --output_directory object_detection_graph
 ```
 
-### 4. Results!
+### 5. Results!
 
 I tested a few pictures on the model to check if it identifies the curb ramps.
 
-### 5. Next Steps
+### 6. Next Steps
 
 * Learn how to get the precision and recall
 * Learn how to improve image augmentation
