@@ -22,7 +22,7 @@ Second, as a path to my quest, the Tensorflow Object Detection API - realeased b
 
 #### Tensorflow Object Detection API:
 
-The Object Detection API has been trained on Microsoft COCO dataset (a dataset of about 300,000 images of 90 commonly found objects) with different trainable detection models. The API does the fine-tuning of a pre-trained object detection model with own data set with new classes, removing the last 90 neuron classification layer of the network and replacing it with a new layer that outputs 2 categories (yellow_curb_ramp, gray_curb_ramp). It also includes image augmentation, such as flipping and saturation.
+The Object Detection API has been trained on Microsoft COCO dataset (a dataset of about 300,000 images of 90 commonly found objects) with different trainable detection models. The API does the fine-tuning on a pre-trained object detection model with a custom data set and new classes, removing the last 90 neuron classification layer of the network and replacing it with a new layer that outputs 2 categories ("yellow curb ramp" and "gray curb ramp"). It also includes image augmentation, such as flipping and saturation.
 
 #### Architecture
 
